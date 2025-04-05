@@ -7,14 +7,14 @@ volumes:
 services:
 # docker run -d --name mysql --network expense -v mysql:/var/lib/mysql mysql:1.0.0
   mysql:
-    image: mysql1.0.0
+    image: mysql.0.0
     networks:
       - expense
     volumes:
       - mysql:/var/lib/mysql
 
   backend:
-    image: backend1.0.0
+    image: backend.0.0
     networks:
       - expense
     container_name: backend
@@ -22,7 +22,7 @@ services:
       - mysql
 
   frontend:
-    image: frontend1.0.0
+    image: frontend.0.0
     networks:
       - expense
     container_name: frontend
